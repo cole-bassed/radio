@@ -8,10 +8,10 @@ This project is dual licensed under the MIT License and the Apache License, Vers
 
 ## Project layout
 
-- `crates/radio-core` — shared domain, ingestion, health, filtering, playback contracts, persistence contracts.
-- `crates/radio-web` — Dioxus web/desktop UI.
-- `crates/radio-cli` — Ratatui CLI.
-- `documentation/` — roadmap, architecture, API, platform, workflow, acceptance criteria, and design docs.
+- [Documentation](documentation) — roadmap, architecture, API, platform, workflow, acceptance criteria, and design docs.
+- [Core Application](packages/core) — shared domain, ingestion, health, filtering, playback contracts, persistence contracts.
+- [Command-line Interface](packages/cli) — Ratatui CLI.
+- [Web/Desktop User Interface](packages/web) — Dioxus web/desktop UI.
 
 ## Development
 
