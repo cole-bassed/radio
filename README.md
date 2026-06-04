@@ -1,19 +1,27 @@
 # Radio
 
-A portable, reproducible Rust app for discovering and listening to live radio across web, desktop, and CLI — built around a shared core, clean filtering, and a music-first experience.
+A portable, reproducible Rust app for discovering and listening to radio across web, desktop, and CLI — built around a shared core, clean filtering, and a music-first experience.
 
 ## Why it exists
 
-Radio should feel effortless. This project is designed to stay out of the way while making station discovery, filtering, and playback fast, reliable, and pleasant across Windows, Linux, and macOS.
+This project grew out of a simple preference: I enjoy listening to music in the terminal, and I wanted a reliable cross-platform way to do it. Radio is built to make that experience calm, fast, and practical, with a shared Rust core and support for web, desktop, and CLI use.
 
-## What makes it different
+## Reproducibility
 
-- Shared Rust core for consistent behavior across every target.
-- Runtime station data with automatic health filtering.
-- Stackable filters for search, country, genre, codec, favorites, live-only, and ad-free stations.
-- Modern, minimal UI with a collapsible filter bar.
-- Honors system and user color modes and accessibility preferences.
-- Reproducible development with Nix.
+Radio is designed to be reproducible across systems.
+
+- **Nix Flakes** provide the primary fully reproducible development environment.
+- **mise** provides a lightweight alternative for systems without Nix.
+- Both are intended to make setup consistent across Windows, Linux, and macOS.
+
+## What sets it apart
+
+- Periodically checks station status on a best-effort basis.
+- Filters out stations that are currently unhealthy or failing checks.
+- Presents a cleaner set of stations less likely to hit dead links.
+- Supports stackable filters, favorites, search, and sleep timers.
+- Uses a shared Rust core for consistent behavior across targets.
+- Reproducible development through Nix flakes and mise.
 
 ## Targets
 
@@ -35,7 +43,8 @@ Radio should feel effortless. This project is designed to stay out of the way wh
 
 ## Development
 
-- `nix develop`
+- Use `nix develop` for the primary reproducible environment.
+- Use mise for lightweight task and tool management on systems without Nix.
 - `cargo build --workspace`
 - `cargo test`
 - `cargo fmt --check`
